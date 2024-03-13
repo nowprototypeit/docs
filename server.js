@@ -78,6 +78,10 @@ if (process.env.LOG_PAGE_VIEWS !== 'true') {
 }
 
 
+app.get('/healthcheck', (req, res) => {
+  res.send('Healthy')
+})
+
 if (canonicalUrl) {
   app.use((req, res, next) => {
     if (!canonicalUrl) {
@@ -106,10 +110,6 @@ if (canonicalUrl) {
 
 app.use('/assets/style.css', express.static(path.join(rootDir, 'generated', 'style.css')))
 app.use('/assets/design-system', express.static(path.join(designSystemRoot, 'assets')))
-
-app.get('/healthcheck', (req, res) => {
-  res.send('Healthy')
-})
 
 app.use(async (req, res, next) => {
   logPageView(req, 'request')
