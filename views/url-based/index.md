@@ -1,4 +1,4 @@
-# Hello world
+# Hello world!
 
 We're currently working on our documentation.  This site is where you'll find it when it's ready.
 
