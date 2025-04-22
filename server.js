@@ -88,16 +88,6 @@ if (canonicalUrl) {
       next()
       return
     }
-    console.log({
-      req: {
-        host: req.get('host'),
-        protocol: req.headers['x-forwarded-proto']
-      },
-      canon: {
-        host: parsedCanonicalUrl.host,
-        protocol: parsedCanonicalUrl.protocol.replace(':', '')
-      }
-    })
     const protocol = req.headers['x-forwarded-proto']
     if (req.get('host') !== parsedCanonicalUrl.host || (protocol && protocol !== parsedCanonicalUrl.protocol.replace(':', ''))) {
       console.log('redirecting from ' + req.get('host') + ' to ' + parsedCanonicalUrl.host + ' for ' + req.originalUrl)
