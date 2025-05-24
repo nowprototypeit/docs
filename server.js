@@ -61,12 +61,6 @@ async function getMarkdownContent (fileName) {
   }
 }
 
-async function rewriteMarkup (markup) {
-  return markup
-    .replaceAll('<code>', '<code><pre>')
-    .replaceAll('</code>', '</pre></code>')
-}
-
 async function getContentFromMarkdown (urlWithoutQueryString) {
   const url = urlWithoutQueryString.endsWith('/') ? urlWithoutQueryString.slice(0, -1) : urlWithoutQueryString
   const fileNamesToTry = [
@@ -77,7 +71,7 @@ async function getContentFromMarkdown (urlWithoutQueryString) {
     const fileName = fileNamesToTry.shift()
     const result = await getMarkdownContent(fileName)
     if (result !== undefined) {
-      return await rewriteMarkup(result)
+      return result
     }
   }
   const path1 = path.join(urlBasedMdDir, url)
@@ -141,6 +135,7 @@ if (canonicalUrl) {
 }
 
 app.use('/assets/style.css', express.static(path.join(rootDir, 'generated', 'style.css')))
+app.use('/assets/script.js', express.static(path.join(rootDir, 'assets', 'script.js')))
 app.use('/assets/design-system', express.static(path.join(designSystemRoot, 'assets')))
 
 app.use((req, res, next) => {

@@ -1,5 +1,9 @@
 {% extends "now-prototype-it-design-system/layouts/docs.njk" %}
 
+{% block pageScripts %}
+<script src="/assets/script.js"></script>
+{% endblock %}
+
 {% macro displayNav(nav) %}
   <ul>
     {% for navItem in nav %}
