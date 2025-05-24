@@ -24,12 +24,13 @@ nav.full-nav ul {
 
 @media (min-width: 45rem) {
   .docs-page {
-    font-size: 0.8rem;
     display: flex;
 
     .docs-sidebar {
+      font-size: 0.9rem;
       padding: 0;
       width: 13rem;
+      flex-shrink: 0;
       position: sticky;
       top: 0;
       height: 100vh;
@@ -38,6 +39,7 @@ nav.full-nav ul {
     }
 
     .docs-content {
+      flex: 1;
       padding: 0 1rem;
       overflow-y: auto;
     }
@@ -59,4 +61,41 @@ nav.full-nav ul {
 
 .docs-content ul li {
   list-style: disc;
+}
+code, pre {
+  background: #dfdfdf;
+  padding: 0.25rem;
+  margin: -0.25rem 0;
+  font-size: 0.8rem;
+}
+
+pre {
+  position: relative;
+  padding-right: 4rem;
+  overflow-x: auto;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.code-block-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.copy-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.25rem;
+  z-index: 2;
+}
+
+pre {
+  overflow-x: auto;
+  padding-right: 4rem;
+  width: 100%;
+  margin: 0;
 }

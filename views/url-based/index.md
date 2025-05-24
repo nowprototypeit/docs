@@ -1,10 +1,22 @@
-# Now Prototype It Documentation
+# Welcome to Now Prototype It Documentation
 
-Welcome, we're in the process of writing documentation for Now Prototype It.  Please use the nav menu to find the content you're looking for
+This documentation will guide you through creating prototypes using Now Prototype It. Whether you're new or experienced, you'll find everything you need to get started.
 
-If you have any questions, please
+## Getting Started
 
- - [Email us at support@nowprototype.it](mailto:support@nowprototype.it) or
- - [Raise an issue on our GitHub project](https://github.com/nowprototypeit/govuk/issues).
+To begin prototyping, follow these steps:
 
-[This documentation project is open source, so if you want to contribute, please do!](https://github.com/nowprototypeit/docs/blob/main/README.md)
+1.  Install Now Prototype It (NATALIE EXPLAIN installation process).
+2.  Create your project files in the appropriate directories.
+3.  Start the development server.
+4.  Access your prototype in your web browser.
+
+## Key Features
+
+-   **Nunjucks Templating:** Use Nunjucks to create dynamic HTML.
+-   **SASS Styling:** Style your prototypes with SASS for efficient CSS development.
+-   **JavaScript Functionality:** Add interactive elements with JavaScript.
+-   **Express Routing:** Customize your routing with Express.js.
+-   **Data Handling:** Pass user inputs as data to Nunjucks templates.
+
+Let’s dive into the details!
