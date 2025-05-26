@@ -1,6 +1,6 @@
 # Using Nunjucks
 
-Now Prototype It uses Nunjucks as its templating engine.
+Now Prototype It uses Nunjucks as its templating engine.  For full documentation on Nunjucks, you can visit the [Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html).
 
 ## Basic Syntax
 
