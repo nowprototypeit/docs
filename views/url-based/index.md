@@ -1,6 +1,11 @@
-# Hello world!
+# Welcome to Now Prototype It Documentation
 
-We're currently working on our documentation.  This site is where you'll find it when it's ready.
+This documentation will guide you through creating prototypes using Now Prototype It. Whether you're new or experienced, you'll find everything you need to get started.
 
-For now, if you have any questions please [email us at support@nowprototype.it](mailto:support@nowprototype.it) or
-[raise an issue on our GitHub project](https://github.com/nowprototypeit/govuk/issues).
+## Getting Started
+
+The easiest way to get started right now is to try a GOV.UK style prototype. You can do this by running the following command in your terminal:
+
+```bash
+npx nowprototypeit create --variant @nowprototypeit/govuk-frontend-adaptor the-name-of-your-prototype
+```

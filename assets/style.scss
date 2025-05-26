@@ -1,3 +1,101 @@
 $now-prototype-it-design-system-assets-url: "/assets/design-system";
 
 @import "../node_modules/@nowprototypeit/design-system/assets/sass/styles";
+
+.related-to-current-page, .current-page {
+  font-weight: bold;
+}
+
+nav.full-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 0.75rem;
+  li {
+    &:before {
+      content: "-";
+    }
+  }
+}
+
+.nowprototypeit-manage-prototype-navigation__list {
+  padding: 0
+}
+
+@media (min-width: 45rem) {
+  .docs-page {
+    display: flex;
+
+    .docs-sidebar {
+      font-size: 0.9rem;
+      padding: 0;
+      width: 13rem;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      border-right: 1px solid #ddd;
+    }
+
+    .docs-content {
+      flex: 1;
+      padding: 0 1rem;
+      overflow-y: auto;
+    }
+  }
+}
+
+@media (max-width: 44.99rem) {
+  .docs-page {
+    .docs-sidebar {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .docs-content {
+      padding: 0.5rem;
+    }
+  }
+}
+
+.docs-content ul li {
+  list-style: disc;
+}
+code, pre {
+  background: #dfdfdf;
+  padding: 0.25rem;
+  margin: -0.25rem 0;
+  font-size: 0.8rem;
+}
+
+pre {
+  position: relative;
+  padding-right: 4rem;
+  overflow-x: auto;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.code-block-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.copy-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.25rem;
+  z-index: 2;
+}
+
+pre {
+  overflow-x: auto;
+  padding-right: 4rem;
+  width: 100%;
+  margin: 0;
+}
