@@ -63,10 +63,11 @@ nav.full-nav ul {
   list-style: disc;
 }
 code, pre {
-  background: #dfdfdf;
-  padding: 0.25rem;
+  background: #f3f3f3;
+  padding: 0.25rem 0.75rem;
   margin: -0.25rem 0;
   font-size: 0.8rem;
+  border-radius: 0.4rem;
 }
 
 pre {
@@ -88,8 +89,8 @@ pre code {
 
 .copy-button {
   position: absolute;
-  right: 0.5rem;
-  top: 0.25rem;
+  right: 0.4rem;
+  top: 0.4rem;
   z-index: 2;
 }
 
