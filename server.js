@@ -330,3 +330,18 @@ function findDirectChildrenInNav(nav, slicedUrl) {
   }
   return found
 }
+
+/* URLs that are linked to from the prototype kit:
+
+ - https://docs.nowprototype.it/0.7.0/routers/create-routes
+ - https://docs.nowprototype.it/0.12.0/nunjucks/filters
+ - https://docs.nowprototype.it/0.12.0/in-browser-javascript
+ - https://docs.nowprototype.it/0.12.0/sass
+ - https://docs.nowprototype.it/0.12.0/nunjucks/how-to-use-layouts
+ - https://docs.nowprototype.it/__VERSION__/nunjucks/how-to-use-layouts
+ - https://docs.nowprototype.it/adaptors/govuk-frontend-adaptor/{{version}}
+ - https://docs.nowprototype.it/__VERSION__
+ - https://docs.nowprototype.it/plugins (Check our website for information about plugins)
+ - https://docs.nowprototype.it/build-a-plugin (Learn about building your own plugin)
+
+ */
