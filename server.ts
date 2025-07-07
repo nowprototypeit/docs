@@ -91,7 +91,7 @@ app.use((req, res, next) => {
   }
 })
 
-app.use(async (req, res, next) => {
+app.use(async (req, res) => {
   const nav = [
     {
       name: 'Home',
@@ -120,7 +120,7 @@ app.use(async (req, res, next) => {
   })
 })
 
-app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
+app.use(async (err: Error, req: Request, res: Response) => {
   res.status(500)
   logPageView(req, '500')
   console.error(err)
@@ -133,7 +133,7 @@ app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
       headerSubNavItems: []
     })
   } catch (e) {
-    console.error('Couldn\'t show nice 500 page.')
+    console.error('Couldn\'t show nice 500 page.', e)
     res.send('<h1>Server error</h1>')
   }
 })
@@ -191,6 +191,13 @@ async function recursiveDirContents (dir: string) {
   }
   return results
 }
+
+verboseLog(marked)
+verboseLog(urlBasedMdDir)
+verboseLog(notFoundMdFile)
+verboseLog(serverErrorMdFile)
+verboseLog(recursiveDirContents)
+verboseLog(convertUrlNameToTitle)
 
 /* URLs that are linked to from the prototype kit:
 
