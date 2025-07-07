@@ -2,6 +2,7 @@ import path from 'node:path'
 import { promises as fsp } from 'node:fs'
 import { createRequire } from 'node:module'
 import express from 'express'
+import type { Request, Response, NextFunction } from 'express';
 import * as marked from 'marked'
 import { URL } from 'node:url'
 
@@ -39,7 +40,9 @@ nunjucks.configure(appViews, {
 
 app.set('view engine', 'njk')
 
-let logPageView = (req, type) => {
+type PageViewTypes = '500'
+
+let logPageView = (req: Request, type: PageViewTypes) => {
   console.log('[%s] [%s] [%s]', new Date().toISOString(), req.originalUrl, type)
 }
 
@@ -61,7 +64,7 @@ app.get([
 })
 
 if (canonicalUrl && parsedCanonicalUrl) {
-  app.use((req, res, next) => {
+  app.use((req: Request, res: Response, next: NextFunction) => {
     if (!canonicalUrl) {
       next()
       return
@@ -117,7 +120,7 @@ app.use(async (req, res, next) => {
   })
 })
 
-app.use(async (err, req, res, next) => {
+app.use(async (err: Error, req: Request, res: Response, next: NextFunction) => {
   res.status(500)
   logPageView(req, '500')
   console.error(err)
@@ -160,7 +163,7 @@ const listener = app.listen(listenPort, () => {
   }
 })
 
-function convertUrlNameToTitle (urlName) {
+function convertUrlNameToTitle (urlName: string) {
   return urlName
     .replace(/-/g, ' ')
     .split(' ')
@@ -168,14 +171,14 @@ function convertUrlNameToTitle (urlName) {
     .join(' ')
 }
 
-function capitaliseWord(word) {
+function capitaliseWord(word: string) {
   if (word === 'a') {
     return word
   }
   return word.charAt(0).toUpperCase() + word.slice(1)
 }
 
-async function recursiveDirContents (dir) {
+async function recursiveDirContents (dir: string) {
   const entries = await fsp.readdir(dir, { withFileTypes: true })
   const results:string[] = []
   for (const entry of entries) {
