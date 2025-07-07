@@ -60,7 +60,7 @@ app.get([
   })
 })
 
-if (canonicalUrl) {
+if (canonicalUrl && parsedCanonicalUrl) {
   app.use((req, res, next) => {
     if (!canonicalUrl) {
       next()
@@ -81,7 +81,7 @@ app.use('/assets/design-system', express.static(path.join(designSystemRoot, 'ass
 
 app.use((req, res, next) => {
   const [url, ...qs] = req.originalUrl.split('?')
-  if (url.endsWith('/index')) {
+  if (url && url.endsWith('/index')) {
     res.redirect(301, [url.substring(0, url.length - '/index'.length), ...qs].join('?'))
   } else {
     next()
@@ -135,23 +135,30 @@ app.use(async (err, req, res, next) => {
   }
 })
 
-const listenArgs = []
+let listenPort:number = 0
 
 if (process.env.PORT) {
-  listenArgs.push(process.env.PORT)
+  listenPort = Number(process.env.PORT)
 } else if (process.env.NPI_DOCS_PORT) {
-  listenArgs.push(process.env.NPI_DOCS_PORT)
+  listenPort = Number(process.env.NPI_DOCS_PORT)
 }
 
-const listener = app.listen.apply(app, listenArgs.concat([() => {
-  console.log('Docs app is listening on port ' + listener.address().port)
+const listener = app.listen(listenPort, () => {
+  const address = listener.address()
+  let port:string|number = 'unknown'
+  if (typeof address === 'string') {
+    port = address
+  } else if (address && typeof address.port === 'number') {
+    port = address.port
+  }
+  console.log('Docs app is listening on port ' + port)
 
   if (canonicalUrl) {
     console.log('The Docs app should now be running on ' + canonicalUrl)
   } else {
-    console.log('To view the Docs app locally visit: http://localhost:' + listener.address().port)
+    console.log('To view the Docs app locally visit: http://localhost:' + port)
   }
-}]))
+})
 
 function convertUrlNameToTitle (urlName) {
   return urlName
@@ -170,7 +177,7 @@ function capitaliseWord(word) {
 
 async function recursiveDirContents (dir) {
   const entries = await fsp.readdir(dir, { withFileTypes: true })
-  const results = []
+  const results:string[] = []
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name)
     if (entry.isDirectory()) {

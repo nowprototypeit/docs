@@ -4,9 +4,10 @@
   "description": "Documentation for Now Prototype It",
   "type": "module",
   "scripts": {
-    "dev": "PORT=3013 nodemon server.ts",
+    "dev": "watch-and-test --watch-file-extensions='ts,json' 'npm run check' 'npm run build' 'npm run dev-server'",
+    "dev-server": "PORT=3013 nodemon server.ts",
     "build": "node build.ts",
-    "check": "tsc --noEmit",
+    "check": "tsc --noEmit --pretty",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
@@ -22,10 +23,12 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "@types/node": "^24.0.10",
     "nodemon": "^3.1.0",
     "standard": "^17.1.0",
     "ts-node": "^10.9.2",
-    "tsx": "^4.20.3"
+    "tsx": "^4.20.3",
+    "watch-and-test": "^0.0.2"
   }
 }
