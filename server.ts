@@ -122,12 +122,11 @@ app.use(async (err, req, res, next) => {
   logPageView(req, '500')
   console.error(err)
   try {
-    const contentFromMarkdown = await getMarkdownContent(serverErrorMdFile)
     res.render('standard-page', {
       nowPrototypeItAssetsPath: '/assets',
       nowPrototypeItDesignSystemAssetsPath: '/assets/design-system',
       nowPrototypeItLogoLink: '/',
-      contentFromMarkdown,
+      contentFromMarkdown: '<h1>Server error</h1><p>We are sorry, but something went wrong on our end.</p>',
       headerSubNavItems: []
     })
   } catch (e) {
