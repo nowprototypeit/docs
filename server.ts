@@ -1,10 +1,11 @@
 import path from 'node:path'
-import { promises as fsp } from 'node:fs'
 import { createRequire } from 'node:module'
 import express from 'express'
 import type { Request, Response, NextFunction } from 'express';
 import * as marked from 'marked'
 import { URL } from 'node:url'
+import {promises as fsp} from "node:fs";
+import {type Breadcrumb, getPageModel, type PageHierarchy} from "./lib/page-model.ts";
 
 const require = createRequire(import.meta.url)
 
@@ -16,7 +17,6 @@ const rootDir = process.cwd()
 const designSystemRoot = path.join(rootDir, 'node_modules', '@nowprototypeit', 'design-system')
 const designSystemNunjucks = path.join(designSystemRoot, 'nunjucks')
 
-const urlBasedMdDir = path.join(rootDir, 'views', 'url-based')
 const errorMdDir = path.join(rootDir, 'views', 'errors')
 const notFoundMdFile = path.join(errorMdDir, 'not-found.md')
 const serverErrorMdFile = path.join(errorMdDir, 'server-error.md')
@@ -24,6 +24,10 @@ const serverErrorMdFile = path.join(errorMdDir, 'server-error.md')
 const canonicalUrl = process.env.CANONICAL_URL
 const verboseLog = process.env.NPI_DOCS__VERBOSE_LOG === 'true' ? console.log : () => {}
 const parsedCanonicalUrl = canonicalUrl ? new URL(canonicalUrl) : null
+
+const pageModel = await getPageModel()
+
+verboseLog('!!! VERBOSE LOGGING IS ENABLED !!!')
 
 const appViews = [
   path.join(rootDir, 'views'),
@@ -91,27 +95,97 @@ app.use((req, res, next) => {
   }
 })
 
-app.use(async (req, res) => {
-  const nav = [
-    {
-      name: 'Home',
-      url: '/',
-      isRelatedToCurrentPage: true,
-      isCurrentPage: false,
-    },
-    {
-      name: 'Docs',
-      url: '/docs',
-      isRelatedToCurrentPage: true,
-      isCurrentPage: false,
+function getRelationToCurrentPage (url: string, req: Request): {isRelatedToCurrentPage: boolean, isCurrentPage: boolean} {
+  if (url === '/latest') {
+    const exactMatch = req.originalUrl.split('?')[0] === '/latest';
+    return {
+      isRelatedToCurrentPage: exactMatch,
+      isCurrentPage: exactMatch
     }
-  ]
-  res.render('standard-page', {
+  }
+  if (req.originalUrl === url) {
+    return {
+      isRelatedToCurrentPage: true,
+      isCurrentPage: true
+    }
+  } else if (req.originalUrl.startsWith(url)) {
+    return {
+      isRelatedToCurrentPage: true,
+      isCurrentPage: false
+    }
+  }
+  return {
+    isRelatedToCurrentPage: false,
+    isCurrentPage: false
+  }
+}
+
+type NavigationItem = {
+  url: string;
+  name: string;
+  isRelatedToCurrentPage: boolean;
+  isCurrentPage: boolean;
+  children: NavigationItem[];
+}
+
+function recursivelyPrepareNavigation (actualUrl: string, pagesModel: PageHierarchy[]): NavigationItem[] {
+  return pagesModel.map(page => {
+    const url = page.url.replace('__VERSION__', 'latest')
+    const {isRelatedToCurrentPage, isCurrentPage} = getRelationToCurrentPage(url, {originalUrl: actualUrl} as Request)
+    return {
+      name: page.name,
+      url,
+      isRelatedToCurrentPage,
+      isCurrentPage,
+      children: recursivelyPrepareNavigation(actualUrl, page.children)
+    }
+  })
+}
+
+function findClosestBreadcrumb (url: string): Breadcrumb[] {
+  const urlParts = url.split('/').filter(part => part.length > 0)
+  while (urlParts.length > 0) {
+    const currentUrl = '/' + urlParts.join('/')
+    const breadcrumbs = pageModel.breadcrumbsByUrl[currentUrl]
+    if (breadcrumbs) {
+      return breadcrumbs
+    } else {
+      urlParts.pop()
+    }
+  }
+  return []
+}
+
+app.use(async (req, res) => {
+  const reqUrl = req.originalUrl.split('?')[0];
+  if (!reqUrl) {
+    throw new Error('This is literally impossible!')
+  }
+  const nav = recursivelyPrepareNavigation(reqUrl, pageModel.hierarchy)
+  let mdFile = pageModel.pagesByUrl[reqUrl]?.file
+  let statusCode = 200
+  const breadcrumbs: Breadcrumb[] = findClosestBreadcrumb(reqUrl)
+
+  if (!mdFile || breadcrumbs === undefined) {
+    mdFile = notFoundMdFile
+    statusCode = 404
+  }
+  let mdContents
+  try {
+    mdContents = await fsp.readFile(mdFile, 'utf-8')
+  } catch (err) {
+    console.error('Error reading markdown file:', mdFile, err)
+    mdContents = await fsp.readFile(serverErrorMdFile, 'utf-8').catch(() => {
+      console.error('Error reading server error markdown file:', serverErrorMdFile, err)
+      return '# Server Error'
+    })
+  }
+  res.status(statusCode).render('standard-page', {
     nowPrototypeItAssetsPath: '/assets',
     nowPrototypeItDesignSystemAssetsPath: '/assets/design-system',
     nowPrototypeItLogoLink: '/',
-    contentFromMarkdown: '<h1>Hello, this is temporary</h1><p>We are working on the docs.</p>',
-    breadcrumbs: [{ name: 'Home', url: '/' }, { name: 'Docs', url: '/docs' }],
+    contentFromMarkdown: marked.parse(mdContents),
+    breadcrumbs,
     nav,
     headerSubNavItems: nav.map(item => (item.name !== 'Home' ? {
       name: item.name,
@@ -162,42 +236,6 @@ const listener = app.listen(listenPort, () => {
     console.log('To view the Docs app locally visit: http://localhost:' + port)
   }
 })
-
-function convertUrlNameToTitle (urlName: string) {
-  return urlName
-    .replace(/-/g, ' ')
-    .split(' ')
-    .map(capitaliseWord)
-    .join(' ')
-}
-
-function capitaliseWord(word: string) {
-  if (word === 'a') {
-    return word
-  }
-  return word.charAt(0).toUpperCase() + word.slice(1)
-}
-
-async function recursiveDirContents (dir: string) {
-  const entries = await fsp.readdir(dir, { withFileTypes: true })
-  const results:string[] = []
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name)
-    if (entry.isDirectory()) {
-      results.push(...(await recursiveDirContents(fullPath)).map(x => path.join(entry.name, x)))
-    } else if (entry.isFile() && entry.name.endsWith('.md')) {
-      results.push(path.relative(dir, fullPath))
-    }
-  }
-  return results
-}
-
-verboseLog(marked)
-verboseLog(urlBasedMdDir)
-verboseLog(notFoundMdFile)
-verboseLog(serverErrorMdFile)
-verboseLog(recursiveDirContents)
-verboseLog(convertUrlNameToTitle)
 
 /* URLs that are linked to from the prototype kit:
 

@@ -4,7 +4,7 @@
   "description": "Documentation for Now Prototype It",
   "type": "module",
   "scripts": {
-    "dev": "watch-and-test --watch-file-extensions='ts,json,md' 'npm run check' 'npm run lint:fix' 'npm run build' 'npm run dev-server'",
+    "dev": "watch-and-test --watch-file-extensions='ts,json,md' 'npm run check' 'npm run lint:fix' 'npm run build'",
     "dev-server": "PORT=3013 nodemon server.ts",
     "build": "node build.ts",
     "check": "tsc --noEmit --pretty",
@@ -25,8 +25,6 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.10",
-    "nodemon": "^3.1.0",
-    "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
     "typescript-eslint": "^8.35.1",
     "watch-and-test": "^0.0.2"
