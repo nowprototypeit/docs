@@ -161,6 +161,15 @@ app.use(async (req, res) => {
   if (!reqUrl) {
     throw new Error('This is literally impossible!')
   }
+  if (reqUrl === '/') {
+    res.redirect(302, '/latest');
+    return;
+  }
+  if (!reqUrl.startsWith('/latest/') && pageModel.pagesByUrl[`/latest${reqUrl}`]) {
+    const latestUrl = `/latest${reqUrl}`;
+    res.redirect(302, latestUrl);
+    return;
+  }
   const nav = recursivelyPrepareNavigation(reqUrl, pageModel.hierarchy)
   let mdFile = pageModel.pagesByUrl[reqUrl]?.file
   let statusCode = 200
