@@ -14,7 +14,7 @@ To run locally, first make sure you're on a recent version of Node.js (24 or abo
 
 ```bash
 npm install
-npm start
+npm run dev-server
 ```
 
 Right now this doesn't do any file watching, so you'll need to restart the server if you change any files (including adding new pages).  We will work on this shortly.

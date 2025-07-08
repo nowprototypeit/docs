@@ -87,9 +87,7 @@ export async function getPageModel(): Promise<FullPageModel> {
         url: pageInfoByUrl.url
       };
       breadcrumbs.unshift(breadcrumb);
-      if (currentUrl in breadcrumbsByUrl) {
-        console.warn(`Duplicate breadcrumbs found for URL ${currentUrl}. Keeping the first one.`)
-      } else {
+      if (!(currentUrl in breadcrumbsByUrl)) {
         breadcrumbsByUrl[currentUrl] = breadcrumbs;
       }
       urlParts.pop();

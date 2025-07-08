@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "watch-and-test --watch-file-extensions='ts,json,md' 'npm run check' 'npm run lint:fix' 'npm run build'",
+    "dev-server": "PORT=3013 node server.ts",
     "start": "node server.ts",
     "build": "node build.ts",
     "check": "tsc --noEmit --pretty",

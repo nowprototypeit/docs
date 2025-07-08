@@ -156,6 +156,33 @@ function findClosestBreadcrumb (url: string): Breadcrumb[] {
   return []
 }
 
+app.use((req, res, next) => {
+  if (req.originalUrl.startsWith('/latest/')) {
+    next()
+    return
+  }
+  const [firstUrlPart, ...restOfUrlParts] = req.originalUrl.split('/').filter(part => part.length > 0)
+  if (!firstUrlPart) {
+    res.redirect(302, '/latest');
+    return
+  }
+  if (firstUrlPart.match(/^\d+\.\d+\.\d+$/)) {
+    res.redirect(302, `/latest/${restOfUrlParts.join('/')}`);
+    return
+  }
+  next()
+})
+
+const backupRedirects: Record<string, string> = {
+  '/build-a-plugin': '/latest/plugins',
+  '/routers/create-routes': '/latest',
+  '/nunjucks/filters': '/latest',
+  '/in-browser-javascript': '/latest',
+  '/sass': '/latest',
+  '/nunjucks/how-to-use-layouts': '/latest/prototyping/nunjucks',
+  '/plugins': '/latest',
+}
+
 app.use(async (req, res) => {
   const reqUrl = req.originalUrl.split('?')[0];
   if (!reqUrl) {
@@ -178,6 +205,19 @@ app.use(async (req, res) => {
   if (!mdFile || breadcrumbs === undefined) {
     mdFile = notFoundMdFile
     statusCode = 404
+    if (backupRedirects[reqUrl]) {
+      res.redirect(301, backupRedirects[reqUrl]);
+      return;
+    }
+    if (reqUrl.startsWith('/adaptors/govuk-frontend-adaptor/') || reqUrl.startsWith('/latest/adaptors/govuk-frontend-adaptor/')) {
+      const lastPart = reqUrl.split('/').pop()
+      if (lastPart && lastPart.match(/^\d+\.\d+\.\d+$/)) {
+        res.redirect(301, `https://www.npmjs.com/package/@nowprototypeit/govuk-frontend-adaptor/v/${lastPart}`);
+        return;
+      }
+      res.redirect(301, 'https://www.npmjs.com/package/@nowprototypeit/govuk-frontend-adaptor');
+      return;
+    }
   }
   let mdContents
   try {
@@ -245,18 +285,3 @@ const listener = app.listen(listenPort, () => {
     console.log('To view the Docs app locally visit: http://localhost:' + port)
   }
 })
-
-/* URLs that are linked to from the prototype kit:
-
- - https://docs.nowprototype.it/0.7.0/routers/create-routes
- - https://docs.nowprototype.it/0.12.0/nunjucks/filters
- - https://docs.nowprototype.it/0.12.0/in-browser-javascript
- - https://docs.nowprototype.it/0.12.0/sass
- - https://docs.nowprototype.it/0.12.0/nunjucks/how-to-use-layouts
- - https://docs.nowprototype.it/__VERSION__/nunjucks/how-to-use-layouts
- - https://docs.nowprototype.it/adaptors/govuk-frontend-adaptor/{{version}}
- - https://docs.nowprototype.it/__VERSION__
- - https://docs.nowprototype.it/plugins (Check our website for information about plugins)
- - https://docs.nowprototype.it/build-a-plugin (Learn about building your own plugin)
-
- */
