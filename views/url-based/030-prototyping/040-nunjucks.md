@@ -1,10 +1,10 @@
-# Using Nunjucks
+# Creating templates with Nunjucks
 
-Now Prototype It uses Nunjucks as its templating engine.  For full documentation on Nunjucks, you can visit the [Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html).
+Now Prototype It uses Nunjucks as its templating engine.  For full documentation on Nunjucks, visit the [Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html).
 
 ## Basic Syntax
 
-Nunjucks uses `{{ }}` for variable output and `{% %}` for control flow.
+Nunjucks uses `{{ }}` for variable output, and `{% %}` for control flow.
 
 Example:
 
