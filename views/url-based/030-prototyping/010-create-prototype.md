@@ -10,7 +10,6 @@ Before you create a new prototype, make sure you:
 
 * Install the prerequisite tools listed in the [Installation](/installation) documentation.
 * See [Understand prototypes](/variants/understand-prototypes) for details on the structure of a prototype, and what you can do with them.
-<!--anything else?-->
 
 ## Create a new prototype
 

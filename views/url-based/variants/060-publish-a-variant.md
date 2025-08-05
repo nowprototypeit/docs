@@ -14,5 +14,3 @@ Before you publish your variant, make sure you:
 Use the command `npm publish` when you're ready to publish. 
 
 > **Note**: If you're unfamiliar with the process of publishing NPM packages, see [NPM's documentation on publishing packages](https://docs.npmjs.com/cli/v9/commands/npm-publish).
-
-<!--I'm not familiar with NPM puvlishing - is this enough info on this page?-->

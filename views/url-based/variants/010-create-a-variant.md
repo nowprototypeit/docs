@@ -18,7 +18,6 @@ Before you create a new variant, make sure you:
 
 * Install the required tools listed in the [Setup](/installation) documentation.
 * See [Understand variants](/variants/understand-variants) for details on the structure of a variant, and how users interact with them.
-<!--anything else?-->
 
 ## Create the variant structure
 
@@ -26,9 +25,11 @@ To start, you need to create the directory and the config file for your variant.
 
 ### 1. Create a new directory for your variant
 
-In the command line, create a new directory in ... <!--where?-->, then initialise `git` and `npm` in that directory.
+In the command line, create a new directory. You can choose any location for this new directory. 
 
-The following commands create an empty directory called `my-awesome-npi-variant`: 
+Next, initialise `git` and `npm` in that directory.
+
+The following commands create an empty directory called `my-awesome-npi-variant`, then initialise `git` and `npm`: 
 
 ```bash
 mkdir -p ~/npi-playground/my-awesome-npi-variant
@@ -66,8 +67,6 @@ Next, let's make the variant more useful by including some starter files.
 
 Starter files define what happens when users create protoypes using your variant.
 
-<!--Do starter files need to be in a particular language/file type?-->
-
 You can provide starter files in one or more directories in your variant. Your variant copies these files into all new prototypes made with it. This allows you to provide a consistent starting point for your users.
 
 ### 1. Create a starter file directory 
@@ -82,9 +81,7 @@ npx now-prototype-it --variant my-awesome-npi-variant create
 
 ### 2. Add starter files to this directory
 
-Add starter files to the directory.
-
-Example: A common first starter file is a homepage template, which you can name `index.njk` <!--why do we specifically mention this?-->. When a new prototype is created, your variant copies this file into the prototype's `views` directory.
+When you create a new prototype, your variant copies any starter file into the prototype's `views` directory.
 
 Here's an example of what you might include in `my-really-helpful-starter-files/app/views/index.njk`:
 
@@ -151,7 +148,7 @@ The following example adds the `installedPackages` array to the variant config f
 }
 ```
 
-You can specify multiple packages in the `installedPackages` array. <!--What is __INHERIT__ doing in installedPackages here?-->
+You can specify multiple packages in the `installedPackages` array. 
 
 ## Change your variant's install scripts (optional)
 
@@ -159,7 +156,7 @@ You can add scripts that set up additional configuration or files when your vari
 
 >**Important**: In most cases, you shouldn't need to change your variant's install scripts. Only use this functionality if you have a specific need and you are confident with the technology.
 
-For example, if you want to replace `git` with `svn`, you could provide your own script to set up `svn`, and remove `__INHERIT__` from the variant config file. However, if you don't inherit the defaults, you will need to watch for any changes to the default variant and update your variant accordingly. <!--What does this mean?-->
+For example, if you want to replace `git` with `svn`, you could provide your own script to set up `svn`, and remove `__INHERIT__` from the variant config file. However, if you don't inherit the defaults, you will need to watch for any changes to the default variant and update your variant accordingly.
 
 ### 1. Create an install script
 

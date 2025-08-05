@@ -8,15 +8,14 @@ Now Prototype It is an open-source project that you can run on your computer or 
 
 You need to have the following tools installed:
 
- - A supported version of Node.js (currently versions 20 and 22). Node.js can be downloaded from [nodejs.org](https://nodejs.org/).
- - Git, which can be downloaded from [git-scm.com](https://git-scm.com/).
- <!--Are there any operating system requirements?-->
+- A supported version of Node.js (currently versions 20 and 22). Node.js can be downloaded from [nodejs.org](https://nodejs.org/).
+- Git, which can be downloaded from [git-scm.com](https://git-scm.com/).
 
 You are now ready to use Now Prototype It!
 
 ## Troubleshooting
 
- If you can't install Node.js locally, please [contact support to discuss our hosted solution](mailto:support@nowprototype.it).
+If you can't install Node.js locally, please [contact support to discuss our hosted solution](mailto:support@nowprototype.it).
 
 If you're still stuck after installing Node.js and Git, you can:
 

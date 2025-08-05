@@ -41,11 +41,11 @@ In its simplest form, a variant comprises:
 
 ### Variant defaults
 
-You can insert an an `__INHERIT__` item in all arrays in the variant config file (`now-prototype-it.variant.json`). This item always refers to the default Now Prototype It files or settings.
+You can insert an an `__INHERIT__` item in all arrays in the variant config file (`now-prototype-it.variant.json`). This item always refers to files or settings up the inheritance chain.
 
 Now Prototype It processes arrays in the order they are listed. If the same files or settings exist in multiple array items, the files closest to the bottom of the list take precedence.
 
-For example, if `__INHERIT__` is at the top of the array, it is always lowest priority. We recommend this, so that it can act as a fallback. If `__INHERIT__` is at the bottom of the array, it will override all other items in the array. <!--This is somewhat assumed from the info on FileDirectories; is it correct?-->
+For example, if `__INHERIT__` is at the top of the array, it is always lowest priority. We recommend this, so that it can act as a fallback. If `__INHERIT__` is at the bottom of the array, it will override all other items in the array. 
 
 ### Variant publishing
 

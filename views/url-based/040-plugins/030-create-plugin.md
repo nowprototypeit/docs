@@ -16,7 +16,6 @@ Before you create a new plugin, make sure you:
 
 * Install the required tools listed in the [Setup](/setup) documentation.
 * See [Understand plugins](/variants/understand-plugins) for details on what plugins do, and how users interact with them.
-<!--anything else?-->
 
 ## Create a plugin
 
@@ -24,7 +23,7 @@ plugins are `config.json` files that anybody can use in their prototypes. This s
 
 ### Create a plugin config file
 
-A plugin config file must contain at least <!--anything?-->. However, you can include all of the following into a plugin:
+A plugin config file must contain at least a description. However, you can include all of the following into a plugin:
 
 - A description of the plugin
 - URLs to the plugin's documentation, version history, and release notes
@@ -40,8 +39,7 @@ A plugin config file must contain at least <!--anything?-->. However, you can in
 - Plugin dependencies that are required for the functionality of the plugin
 - Page templates that the user can use to create new pages in their prototype
 - Express routers for multi-page flows and helpers
-- Proxy plugin configuration which is treated as the plugin configuration for other dependencies that don't have their own configuration
-<!--Are there APIs associated with these that the user needs to know about?-->
+- Proxy plugin configuration which is treated as the plugin configuration for other dependencies that don't have their own configuration.
 
 ### Validate your new plugin
 

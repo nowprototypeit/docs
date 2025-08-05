@@ -4,12 +4,6 @@ Of course, you'll want to test your variant before publishing it to NPM. To do t
 
 For this documentation we'll create a variant called `my-awesome-npi-variant` and assume that the package is located in the local directory `~/npi-playground/my-awesome-npi-variant`.
 
-## Before you start
-
-Before you test your variant, make sure you:
-
-* <!--Anything here?-->
-
 ## Testing a variant from a local directory
 
 To test your variant locally, run the following command in your terminal (replacing any file or directory names if necessary):
