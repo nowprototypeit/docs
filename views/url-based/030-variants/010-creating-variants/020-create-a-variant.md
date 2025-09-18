@@ -1,8 +1,10 @@
 # Create a variant
 
-Variants in Now Prototype It allow you to create pre-configured setups that can be reused across multiple prototypes. This is particularly useful for teams or organisations that want to maintain consistency in their prototyping process.
+In Now Prototype It, you can use **variants** to create pre-configured setups that can be reused across multiple prototypes. This is particularly useful for teams or organisations that want to maintain consistency in their prototyping process.
 
-This guide describes the following steps:
+To understand how users apply a variant, see [Use a variant](/variants/create-a-variant/use-a-variant).
+
+This guide describes the following steps to create a variant:
 
 1. **Create the variant structure**: Set up the directory and necessary files for a new variant.
 1. **Add starter files to your variant**: Add the files you want the variant to apply when users use it to create a new prototype.
