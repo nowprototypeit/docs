@@ -4,8 +4,7 @@ This documentation will guide you through creating prototypes using Now Prototyp
 
 ## Getting Started
 
-The easiest way to get started right now is to try a GOV.UK style prototype. You can do this by running the following command in your terminal:
+Depending on how you like to start learning, you can:
 
-```bash
-npx nowprototypeit create --variant @nowprototypeit/govuk-frontend-adaptor the-name-of-your-prototype
-```
+* Read through this documentation
+* [Install and explore a demo prototype](try-demo-project)
