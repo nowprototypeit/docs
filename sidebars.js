@@ -22,7 +22,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Prototypes',
+      label: 'Building prototypes',
       items: [
         'prototypes/index',
         'prototypes/create-prototype',
@@ -30,6 +30,7 @@ const sidebars = {
         'prototypes/create-prototype-pages',
         'prototypes/edit-prototype-pages',
         'prototypes/nunjucks',
+        `prototypes/handling-user-input`,
       ],
     },
     {

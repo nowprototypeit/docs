@@ -1,38 +1,24 @@
-# Creating templates with Nunjucks
+# Templating with Nunjucks
 
-Now Prototype It uses Nunjucks as its templating engine.  For full documentation on Nunjucks, visit the [Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html).
+Now Prototype It uses a tool called Nunjucks as its templating engine. With Nunjucks, you can quickly add more complex behaviour to your HTML pages, and create reusable and interactive HTML components. 
 
-## Basic Syntax
+Nunjucks is powered by JavaScript, but you don't need to learn Javascript to use it; instead, you just add a small amount of extra code alongside your HTML. 
 
-Nunjucks uses `{{ }}` for variable output, and `{% %}` for control flow.
+## Basic Nunjucks syntax
 
-Example:
+For full documentation and guidance on templating with Nunjucks, see the Nunjucks [Templating documentation](https://mozilla.github.io/nunjucks/templating.html).
+
+Nunjucks has a fairly simple structure that's designed to be human-readable. 
+
+Nunjucks uses the following syntax: 
+
+* `{% %}` for control flow (template logic, like [setting variables](https://mozilla.github.io/nunjucks/templating.html#set), [if/else statements](https://mozilla.github.io/nunjucks/templating.html#if) and [for loops](https://mozilla.github.io/nunjucks/templating.html#for))
+* `{{ }}` for variable output (displaying the value of [variables](https://mozilla.github.io/nunjucks/templating.html#variables))
+
+For example, the following code looks to see if the variable `name` has a value, and if it does, it prints a personalised welcome message in HTML:
 
 ```nunjucks
 {% if name %}
     <p>Welcome to our site, {{ name }}.</p>
 {% endif %}
 ```
-
-## Passing user input to Nunjucks
-
-We try to make it easy for you to handle user input in your prototypes. When a user submits a form, the data is automatically passed to Nunjucks templates as `userInput`.
-
-For example, this page will display the name the user entered in the form while also allowing them to resubmit the form with a new name:
-
-```nunjucks
-<!DOCTYPE html>
-{% if userInput.name %}
-    <p>Welcome to our site, {{ userInput.name }}.</p>
-{% else %}
-    <p>Welcome to our site.</p>
-{% endif %}
-
-<form method="post"> <!-- no action, so it submits to the same URL -->
-    <label for="name">Enter your name:</label>
-    <input type="text" id="name" name="name" value="{{ userInput.name }}">
-    <button type="submit">Submit</button>
-</form>
-```
-
-It's as simple as that! There's no need to write any additional code to handle the form submission; Now Prototype It takes care of that for you.  To give credit to the project we forked, this feature originated from the [GOV.UK Prototype Kit](https://github.com/alphagov/govuk-prototype-kit).  We have made the name more descriptive.
