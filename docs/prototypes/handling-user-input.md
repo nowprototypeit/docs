@@ -7,12 +7,12 @@ Now Prototype It uses the Nunjucks templating engine to handle user input in you
 
 When a user submits a form, NPI automatically passes the data to the Nunjucks template as `userInput`.
 
-For example, the following Nunjucks code sample creates a form that allows the user to enter their name, and tags the input `userInput.name`:
+For example, the following Nunjucks code sample creates a form that allows the user to enter their name, and saves the input in the value `name`:
 
 ```nunjucks
 <form method="post">
     <label for="name">Enter your name:</label>
-    <input type="text" id="name" name="name" value="{{ userInput.name }}">
+    <input type="text" id="name" name="name">
     <button type="submit">Submit</button>
 </form>
 ```
