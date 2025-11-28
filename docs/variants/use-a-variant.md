@@ -1,13 +1,21 @@
 # Use a variant
 
-When you create a new prototype, you can specify which variant to use. This allows you to quickly set up your prototype with the desired features and configurations.
+To use a variant, you need to specify it when you create a new prototype. 
+
+## Before you start
+
+## Apply a variant to a new prototype
 
 To specify a variant, you need to include it in the command you write when you create a new prototype. 
 
 After the `create` command, enter `--variant`, followed by the variant's package name.
 
-For example, the following command creates a new prototype called `new-prototype` that uses a variant called `my-awesome-npi-variant`.
+* A new prototype with no variant: <br>`npx now-prototype-it create prototype-name`
+* A new protoype with a variant:<br>`npx now-prototype-it create --variant variant-name prototype-name`
+
+
+For example, the following command creates a new prototype called `prototype-name` that uses a variant called `my-awesome-npi-variant`.
 
 ```bash
-npx now-prototype-it create --variant my-awesome-npi-variant new-prototype
+npx now-prototype-it create --variant variant-name prototype-name
 ```

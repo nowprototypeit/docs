@@ -1,8 +1,8 @@
 # Introduction to variants
 
-With Now Prototype It, you can create custom setup packages for your prototypes so that individual users don't have to configure a complex setup every time. These setup packages are called **Variants**. 
+**Variants** are custom setup packages for your prototypes. You run them just once, when you first create your protoype.
 
-Variants can include specific configurations, tools, and libraries tailored to your needs.
+Variants give prototype designers a quick starting point with no additional configuration. They can include [plugins](/docs/plugins/index), starting pages, and Protoype Manager configurations. 
 
 Variants are particularly useful for teams that need to maintain consistency in their prototyping process.
 

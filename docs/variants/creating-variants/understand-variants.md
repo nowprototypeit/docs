@@ -18,12 +18,10 @@ This section describes the structure and default behaviours of variants.
 
 A Now Prototype It variant is an NPM-compatible package that contains a `now-prototype-it.variant.json` file.
 
-In its simplest form, a variant comprises:
-
-* **A directory** with `git` and `npm` initialised.
-    * **A config file**: A `now-prototype-it.variant.json` file that configures the variant's behavior when a prorotype is created.
-    * **Starter files**: Nunjucks (`.njk`) files that get copied into a new prototype when the prototype is created.
-    * **Installation files** (optional): A JavaScript (`.js`) file that defines the variant's installation or initialization behaviour.
+In its simplest form, a variant is a directory with `git` and `npm` initialised, containing:
+* **A config file**: A `now-prototype-it.variant.json` file that configures the variant's behavior when a prorotype is created.
+* **Starter files**: Nunjucks (`.njk`) files that get copied into a new prototype when the prototype is created.
+* **Installation files** (optional): A JavaScript (`.js`) file that defines the variant's installation or initialization behaviour.
 
 ### Variant defaults
 
@@ -45,6 +43,8 @@ We have published this variant to NPM, so you can try it out. To access it, run 
 
 ```bash
 mkdir -p ~/npi-playground/prototype-kits/example-variant-prototype
+
 cd ~/npi-playground/prototype-kits/example-variant-prototype
+
 npx now-prototype-it --variant my-awesome-npi-variant create
 ```

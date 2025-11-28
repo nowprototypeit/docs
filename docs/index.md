@@ -6,9 +6,9 @@ slug: /
 
 Welcome to the Now Prototype It documentation!
 
-This documentation will guide you through creating prototypes using Now Prototype It. Whether you're new or experienced, you'll find everything you need to get started.
+With Now Prototype It, you can make high-fidelity interactive UX prototypes, powered by your design system.
 
-## Getting Started
+## Getting started
 
 Depending on how you like to start learning, you can:
 

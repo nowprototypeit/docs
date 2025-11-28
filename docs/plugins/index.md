@@ -1,6 +1,6 @@
 # Introduction to plugins
 
-You can use Now Prototype It to create prototypes that match your organisation's existing styles and templates. To do this, you can use **plugins**. 
+**Plugins** are configuration packages that you can add to your prototype at any time. They're useful for adding design system compatibility, page templates, and styles to your prototype.
 
 You can create your own plugins, or use plugins that somebody else has created.
 

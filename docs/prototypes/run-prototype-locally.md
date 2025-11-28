@@ -1,6 +1,6 @@
 # Run your prototype locally
 
-Once you've created your prototype, run it to view it in the browser. This is how you access the Prototype Manager, and how you preview your work. 
+Run your prototype locally at any time to view it in the browser, and to access the Prototype Manager.
 
 ## Before you start
 

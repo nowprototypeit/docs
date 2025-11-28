@@ -1,6 +1,6 @@
 # Create a new prototype
 
-This guide explains how to create a new prototype. 
+This guide explains how to create a blank prototype, and a prototype with a variant. 
 
 If you'd like to experiment with an existing prototype first, see [Try a demo prototype](/getting-started/try-demo-prototype).
 
@@ -13,7 +13,7 @@ Before you create a new prototype, make sure you:
 
 ## Create a new prototype
 
-To create a blank protoype using the default settings, open your terminal and run the following command (replace `prototype-name` with a name):
+To create a blank protoype using the default settings, open the command line and run the following command (replace `prototype-name` with a name):
 
 ```
 npx nowprototypeit create prototype-name

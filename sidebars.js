@@ -35,17 +35,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Plugins',
-      items: [
-        'plugins/index',
-        'plugins/understand-plugins',
-        'plugins/add-plugin',
-        'plugins/create-plugin',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Variants',
+      label: 'Setting up with variants',
       items: [
         'variants/index',
         'variants/use-a-variant',
@@ -59,6 +49,16 @@ const sidebars = {
           'variants/creating-variants/publish-a-variant',
       ],
     },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Configuring with plugins',
+      items: [
+        'plugins/index',
+        'plugins/understand-plugins',
+        'plugins/add-plugin',
+        'plugins/create-plugin',
       ],
     },
   ],

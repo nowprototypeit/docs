@@ -1,6 +1,6 @@
 # Setup
 
-This section will help you get set up to work with Now Prototype It.
+Get set up to work with Now Prototype It.
 
 Now Prototype It is an open-source project that you can run on your computer or laptop, as long as you have the right tools installed. 
 
@@ -15,9 +15,9 @@ You are now ready to use Now Prototype It!
 
 ## Troubleshooting
 
-If you can't install Node.js locally, please [contact support to discuss our hosted solution](mailto:support@nowprototype.it).
+If you can't install Node.js locally, [get in touch for support](mailto:support@nowprototype.it).
 
 If you're still stuck after installing Node.js and Git, you can:
 
-- Reach out to us at `support@nowprototype.it` with your questions
+- [Get in touch for support](mailto:support@nowprototype.it)
 - [Raise an issue on GitHub](https://github.com/nowprototypeit/nowprototypeit/issues)
