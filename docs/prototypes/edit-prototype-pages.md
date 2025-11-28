@@ -6,7 +6,7 @@ Editing pages is how you add content to your prototypes. This includes text, ima
 
 Before you edit a prototype page, make sure you:
 
-* [Run your prototype locally](/docs/prototypes/run-prototype-locally), so that you can test as you go.
+* [Run your prototype locally](/prototypes/run-prototype-locally), so that you can test as you go.
 * [Create prototype pages](/prototypes/create-prototype-pages) that you want to edit.
 * Install any [plugins](/plugins) you need, if you want to use existing page templates or design system components.
 
