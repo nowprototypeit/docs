@@ -130,3 +130,7 @@ dist
 .pnp.*
 .idea
 generated
+
+# Other
+build
+.DS_Store
