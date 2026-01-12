@@ -26,10 +26,10 @@ const sidebars = {
       items: [
         'prototypes/index',
         'prototypes/create-prototype',
-        'prototypes/link-pages',
         'prototypes/run-prototype-locally',
         'prototypes/create-prototype-pages',
         'prototypes/edit-prototype-pages',
+        'prototypes/link-pages',
         'prototypes/nunjucks',
         `prototypes/handling-user-input`,
       ],
@@ -62,6 +62,13 @@ const sidebars = {
         'plugins/create-plugin',
       ],
     },
+    // {
+    //   type: 'category',
+    //   label: 'Sharing prototypes',
+    //   items: [
+    //     'sharing/sharing-prototypes',
+    //   ],
+    // },
   ],
   
 };
