@@ -26,7 +26,7 @@ const sidebars = {
       items: [
         'prototypes/index',
         'prototypes/create-prototype',
-        'prototypes/link-pages'
+        'prototypes/link-pages',
         'prototypes/run-prototype-locally',
         'prototypes/create-prototype-pages',
         'prototypes/edit-prototype-pages',
