@@ -12,7 +12,7 @@ This repository uses topic-based authoring for documentation structure, and Docu
 
 ### Running locally
 
-To run locally, run:
+To run the documentation locally from this repo, open a terminal at the root and run:
 
 ```bash
 npm start
