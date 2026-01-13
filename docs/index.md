@@ -6,7 +6,7 @@ slug: /
 
 Welcome to the Now Prototype It documentation!
 
-With Now Prototype It, you can make high-fidelity interactive UX prototypes, powered by your design system.
+With Now Prototype It, you can make high-fidelity interactive web prototypes, powered by your design system.
 
 ## Getting started
 
@@ -17,7 +17,7 @@ Depending on how you like to start learning, you can:
 
 ## Get in touch
 
-If you need support or if you have any questions for us, please do:
+If you need support or if you have any questions for us, please:
 
 - Reach out to us at `support@nowprototype.it`
 - [Raise an issue on GitHub](https://github.com/nowprototypeit/nowprototypeit/issues)
