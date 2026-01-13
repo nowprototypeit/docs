@@ -8,34 +8,23 @@ The pages themselves are in the `views/url-based` directory, adding new `md` fil
 
 ## Contributing
 
+This repository uses topic-based authoring for documentation structure, and Docusaurus to generate the documentation site. 
+
 ### Running locally
 
-To run locally, first make sure you're on a recent version of Node.js (24 or above) as we use Node's Typescript support which (at the time of writing) is brand new.
+To run the documentation locally from this repo, open a terminal at the root and run:
 
 ```bash
-npm install
-npm run dev-server
+npm start
 ```
-
-Right now this doesn't do any file watching, so you'll need to restart the server if you change any files (including adding new pages).  We will work on this shortly.
 
 ### Adding new pages
 
-To add a new page, create a new `.md` file in the `views/url-based` directory. There's a precise structure to follow:
+To add a new page:
 
- - Pages must be named with a triple-digit number followed by a hyphen followed by the URL name for the page. For example `001-my-new-page.md`.
- - Pages with children must be directories named with the same convention.  For example `002-a-page-with-children`, they must then contain an `index.md` file which will be the content of the page.
+1. create a new `.md` file in the `/docs` directory. Pages must be named in kebab-case. For example `my-new-page.md`.
+2. Write your content in Markdown.
+3. Add the page to the apppropriate space in `sidebars.js`, to make sure it appears in the sidebar.
+4. Run the docs locally to validate that your changes work.
 
-Once you've added a page it will be included in the navigation menu automatically. If you want to change the order of the pages, you can rename them with different numbers.
-
-### Leaving space for future pages
-
-In order to avoid having to rename all the pages when adding new ones, we recommend leaving space for future pages.  We currently have:
-
- - `010-prototyping`
- - `020-plugins`
- - `030-variants`
-
-This leaves space for new pages which can be added between the current pages.
-
-The future is uncertain, but we want to avoid predictable limitations.  We know there will be times when we'll need to rename pages, but by adding this space between pages we can avoid unnecessary renaming.  Please keep this in mind when adding new pages.
+The future is uncertain, but we want to avoid predictable limitations.  We know there will be times when we'll need to move content and rename pages. Please keep this in mind when adding new pages.
