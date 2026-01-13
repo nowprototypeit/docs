@@ -1,6 +1,6 @@
 # Understand variants
 
-In Now Prototype It, a variant is a pre-configured setup package that runs when you create a prototype. 
+In Now Prototype It, a **variant** is a pre-configured setup package that runs when you create a prototype. 
 
 ## Using a variant
 

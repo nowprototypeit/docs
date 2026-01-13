@@ -1,12 +1,8 @@
 # Use a variant
 
-To use a variant, you need to specify it when you create a new prototype. 
-
-## Before you start
+To specify a variant, you need to include it in the command you write when you [create a new prototype](/prototypes/create-prototype). 
 
 ## Apply a variant to a new prototype
-
-To specify a variant, you need to include it in the command you write when you create a new prototype. 
 
 After the `create` command, enter `--variant`, followed by the variant's package name.
 
