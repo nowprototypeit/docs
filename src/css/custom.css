@@ -27,10 +27,9 @@
 
 .navbar {
   display: block;
-  background: white;
   text-align: center;
   min-height: 10rem;
-  border-bottom: 2px solid #1b2441;
+  border-bottom: 1px solid #1b2441;
   background-image: url('/img/logo.png');
   background-color: #ffffff;
   background-repeat: no-repeat;
@@ -39,8 +38,15 @@
   padding-top: 6.5rem;
   h3 {
     font-weight: 400;
-    font-size: 2rem !important;
-    /*font-family: monospace !important;*/
+    font-size: 2rem;
+  }
+}
+
+.markdown a {
+  font-weight: 900;
+  &:hover {
+    text-decoration: none;
+    border-bottom: 3px solid #1b2441;
   }
 }
 
@@ -49,7 +55,7 @@
 }
 
 .theme-doc-sidebar-container > div:first-child {
-  border-right: 2px solid #1b2441;
+  border-right: 1px solid #1b2441;
 }
 
 .theme-doc-sidebar-container > div:first-child > div:first-child {
