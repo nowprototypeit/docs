@@ -4,7 +4,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  favicon: 'assets/design-system/icons/favicon.ico',
+  favicon: 'img/favicon.ico',
 
   presets: [
     [
@@ -20,12 +20,13 @@ module.exports = {
         },
         blog: false,
         pages: false,
-        theme: false,          // <-- disables the classic theme
+        theme: {
+          customCss: './src/css/custom.css'
+        }
       },
     ],
   ],
 
-  //themes: ['./theme'],           // <-- your local folder
   staticDirectories: ['static'],
 
   themeConfig: {

@@ -6,25 +6,52 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #1b2441;
+  --ifm-color-primary-dark: #18203b;
+  --ifm-color-primary-darker: #171f37;
+  --ifm-color-primary-darkest: #13192e;
+  --ifm-color-primary-light: #1e2848;
+  --ifm-color-primary-lighter: #1f294b;
+  --ifm-color-primary-lightest: #232f55;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.navbar {
+  display: block;
+  background: white;
+  text-align: center;
+  min-height: 10rem;
+  border-bottom: 2px solid #1b2441;
+  background-image: url('/img/logo.png');
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center 1rem;
+  background-size: 38rem;
+  padding-top: 6.5rem;
+  h3 {
+    font-weight: 400;
+    font-size: 2rem !important;
+    /*font-family: monospace !important;*/
+  }
+}
+
+.theme-doc-sidebar-container {
+  margin-top: 0 !important;
+}
+
+.theme-doc-sidebar-container > div:first-child {
+  border-right: 2px solid #1b2441;
+}
+
+.theme-doc-sidebar-container > div:first-child > div:first-child {
+  padding-top: 2rem;
 }
