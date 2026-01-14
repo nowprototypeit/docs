@@ -6,8 +6,8 @@ To create a page for your prototype, you can either use an existing page templat
 
 Before you create a new prototype page, make sure you:
 
-* [Run your prototype locally](/prototypes/run-prototype-locally), so that you can test as you go.
-* Install any [plugins](/plugins) you need, if you want to use existing page templates.
+* [Run your prototype locally](run-prototype-locally), so that you can test as you go.
+* Install any [plugins](../plugins) you need, if you want to use existing page templates.
 
 ## Create a page from a page template
 

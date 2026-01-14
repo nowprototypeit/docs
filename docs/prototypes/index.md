@@ -33,4 +33,4 @@ NPI prototypes have a built-in **Prototype Manager**, which contains everything 
 
 By default, the Prototype Manager is at `http://localhost:3000/manage-prototype`.
 
-To learn how to create and edit pages for your prototype, see [Create prototype pages](/prototypes/create-prototype-pages) and [Edit prototype pages](/prototypes/edit-prototype-pages).
+To learn how to create and edit pages for your prototype, see [Create prototype pages](prototypes/create-prototype-pages) and [Edit prototype pages](prototypes/edit-prototype-pages).

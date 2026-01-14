@@ -2,14 +2,14 @@
 
 This guide explains how to create a blank prototype, and a prototype with a variant. 
 
-If you'd like to experiment with an existing prototype first, see [Try a demo prototype](/getting-started/try-demo-prototype).
+If you'd like to experiment with an existing prototype first, see [Try a demo prototype](../getting-started/try-demo-prototype).
 
 ## Before you start
 
 Before you create a new prototype, make sure you:
 
-* Install the prerequisite tools listed in the [Setup](/getting-started/setup) documentation.
-* See [Introduction to prototypes](/prototypes) for details on the structure of a prototype, and what you can do with them.
+* Install the prerequisite tools listed in the [Setup](../getting-started/setup) documentation.
+* See [Introduction to prototypes](../prototypes) for details on the structure of a prototype, and what you can do with them.
 
 You don’t need to download Now Prototype It manually. Instead, you run a single command that temporarily downloads it, creates a prototype on your machine, and then discards the download. This saves space, and ensures you’re always using the latest version.
 
@@ -33,4 +33,4 @@ To specify a variant, you add `--variant` to your command, like this:
 npx nowprototypeit create --variant variant-name prototype-name
 ```
 
-See [Variants](/variants) for more information.
+See [Variants](../variants) for more information.

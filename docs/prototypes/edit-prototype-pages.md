@@ -6,9 +6,9 @@ Editing pages is how you add content to your prototypes. This includes text, ima
 
 Before you edit a prototype page, make sure you:
 
-* [Run your prototype locally](/prototypes/run-prototype-locally), so that you can test as you go.
-* [Create prototype pages](/prototypes/create-prototype-pages) that you want to edit.
-* Install any [plugins](/plugins) you need, if you want to use existing page templates or design system components.
+* [Run your prototype locally](run-prototype-locally), so that you can test as you go.
+* [Create prototype pages](create-prototype-pages) that you want to edit.
+* Install any [plugins](../plugins) you need, if you want to use existing page templates or design system components.
 
 ## Where to edit your page
 
@@ -24,7 +24,7 @@ First, enable browser editing:
 
 Now you can open the page and start editing: 
 
-1. In the browser, open the page you want to edit. By default, this is at `http://localhost:3000/your-file-name` <br/>**Note**: If the page you want to edit does not yet exist, [create a page](/prototypes/create-prototype-pages) first.
+1. In the browser, open the page you want to edit. By default, this is at `http://localhost:3000/your-file-name` <br/>**Note**: If the page you want to edit does not yet exist, [create a page](create-prototype-pages) first.
 1. In the page header, select **Edit this page**. An editor containing the page's code and content should appear at the bottom of the browser.
 1. Add and edit content in the editor.
 1. To save and preview your edits, select **Save changes**.
@@ -44,6 +44,6 @@ If you'd rather edit files in your favourite coding environment, you can do that
 
 This is where we hand the reins over to you. The NPI Prototype Kit is hugely flexible; anything you can do in HTML or Nunjucks, you can do on a prototype page. 
 
-In most cases, we recommend that prototype designers start with a [variant](/variants) and/or [plugins](/plugins) that add page templates and design system compatibility to your prototype project. This way, you can quickly jump into working on the content and UX, and you should only need minimal knowledge of HTML and/or Nunjucks; just enough to find your way around an existing page template. 
+In most cases, we recommend that prototype designers start with a [variant](../variants) and/or [plugins](../plugins) that add page templates and design system compatibility to your prototype project. This way, you can quickly jump into working on the content and UX, and you should only need minimal knowledge of HTML and/or Nunjucks; just enough to find your way around an existing page template. 
 
 If you're starting from scratch, without any page templates or design system components, you'll likely need a strong understanding of working in HTML and Nunjucks. 

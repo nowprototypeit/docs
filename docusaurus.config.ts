@@ -17,6 +17,13 @@ module.exports = {
           remarkPlugins: [],
           rehypePlugins: [],
           editUrl: undefined,
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'Latest',
+              path: 'latest'
+            }
+          }
         },
         blog: false,
         pages: false,

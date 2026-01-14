@@ -14,8 +14,8 @@ For an example of how plugin config files are constructed, take a look at the `n
 
 Before you create a new plugin, make sure you:
 
-* Install the required tools listed in the [Setup](/getting-started/setup) documentation.
-* See [Understand plugins](/plugins/understand-plugins) for details on what plugins do, and how users interact with them.
+* Install the required tools listed in the [Setup](../getting-started/setup) documentation.
+* See [Understand plugins](understand-plugins) for details on what plugins do, and how users interact with them.
 
 ## Create a plugin
 

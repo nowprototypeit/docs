@@ -2,7 +2,7 @@
 
 Now Prototype It uses the Nunjucks templating engine to handle user input in your prototypes. 
 
-> **Note**: If you're unfamiliar with Nunjucks, see [Templating with Nunjucks](/prototypes/nunjucks).
+> **Note**: If you're unfamiliar with Nunjucks, see [Templating with Nunjucks](nunjucks).
 
 When a user submits a form, NPI automatically passes the data to the Nunjucks template as `userInput`.
 

@@ -2,7 +2,7 @@
 
 To start exploring and experimenting straight away, you can run this example GOV.UK style prototype.
 
-Make sure you have followed the [setup instructions](/getting-started/setup) before you start. 
+Make sure you have followed the [setup instructions](setup) before you start. 
 
 ## Run the example protoype
 
