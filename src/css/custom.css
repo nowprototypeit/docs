@@ -36,6 +36,11 @@
   background-position: center 1rem;
   background-size: 38rem;
   padding-top: 6.5rem;
+
+  @media (max-width: 39rem) {
+    background-size: 100vw;
+    /*padding-top: 5.5rem;*/
+  }
   h3 {
     font-weight: 400;
     font-size: 2rem;
@@ -43,10 +48,11 @@
 }
 
 .markdown a {
-  font-weight: 900;
+  /*font-weight: 600;*/
+  color: #35529C;
   &:hover {
     text-decoration: none;
-    border-bottom: 3px solid #1b2441;
+    border-bottom: 2px solid #35529C;
   }
 }
 
