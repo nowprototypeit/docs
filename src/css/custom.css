@@ -67,3 +67,10 @@
 .theme-doc-sidebar-container > div:first-child > div:first-child {
   padding-top: 2rem;
 }
+
+.navbar__toggle {
+  position: absolute;
+  /*z-index: 9999;*/
+  top: 6.9rem;
+  left: 1rem;
+}
