@@ -62,6 +62,13 @@ const sidebars = {
         'plugins/create-plugin',
       ],
     },
+    {
+      type: 'category',
+      label: 'Sharing prototypes',
+      items: [
+        'sharing/sharing-prototypes',
+      ],
+    },
   ],
   
 };
